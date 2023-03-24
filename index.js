@@ -1,7 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose');
 const atmRoutes = require('./routers/atm')
-
+const feedbackRoutes = require('./routers/feedback')
 const app = express()
 
 mongoose.set("strictQuery", false);
@@ -13,5 +13,6 @@ db.once('open', () => console.log('Connected Database'))
 app.use(express.json())
 
 app.use('/atm', atmRoutes)
+app.use('/feedback', feedbackRoutes)
 
 app.listen(3000)

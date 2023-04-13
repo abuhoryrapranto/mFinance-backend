@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
 
     try {
 
-        const backup = await Backup.find({deviceId: req.query.deviceId}, {'_id':0});
+        const backup = await Backup.find({deviceId: req.query.deviceId}, {'_id':0, 'deviceId': 0});
 
         if(backup.length > 0) {
 

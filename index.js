@@ -2,6 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose');
 const atmRoutes = require('./routers/atm')
 const feedbackRoutes = require('./routers/feedback')
+const backupRoutes = require('./routers/backup')
 const app = express()
 
 mongoose.set("strictQuery", false);
@@ -14,5 +15,6 @@ app.use(express.json())
 
 app.use('/atm', atmRoutes)
 app.use('/feedback', feedbackRoutes)
+app.use('/backup', backupRoutes)
 
 app.listen(3000)
